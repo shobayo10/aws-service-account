@@ -24,7 +24,7 @@ jobs:
   integration:
     uses: ./.github/workflows/integrate-python-app.yml
     permissions:
-      contents: read
+      contents: read 
 
   delivery:
     needs: [integration]
