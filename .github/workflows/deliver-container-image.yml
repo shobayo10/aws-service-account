@@ -93,4 +93,4 @@ jobs:
           COSIGN_EXPERIMENTAL: "true"
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
-        run: echo "ghcr.io/shobayo10/aws-service-account:main" | xargs -I {} cosign sign {}@${{ steps.build-and-push.outputs.digest }} --signing-args="--no-prompt"
+        run: echo "ghcr.io/shobayo10/aws-service-account:main" | xargs -I {} yes y | cosign sign {}@${{ steps.build-and-push.outputs.digest }}
